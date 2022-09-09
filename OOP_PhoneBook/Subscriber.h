@@ -4,10 +4,16 @@ class Subscriber
 {
 private:
 	char* Name;
-	char* PhoneNumberHome;
+
+	/*char* PhoneNumberHome;
 	char* PhoneNumberJob;
 	char* PhoneNumberMobile;
-	char* AdditionalInformation;
+	char* AdditionalInformation;*/
+
+	char PhoneNumberHome[20];
+	char PhoneNumberJob[20];
+	char PhoneNumberMobile[20];
+	char AdditionalInformation[20];
 public:
 	Subscriber();
 	Subscriber(char* PhoneNumberMobile);

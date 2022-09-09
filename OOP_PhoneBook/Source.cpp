@@ -18,17 +18,18 @@ void ShowAllSubscriber(Subscriber* arr, int& size);
 //void LoadDataBin();
 //void SaveDataBin();
 
-void push_backSubscriber(Subscriber*& arr, int& size);
+//void push_backSubscriber(Subscriber*& arr, int& size);
 
 int main()
 {
-	Subscriber* s = new Subscriber[1];
+	/*Subscriber* s = new Subscriber[1];
 	char phonenumber[20];
 	cout << "Enter phone mobile: ";
 	cin >> phonenumber;
 	Subscriber s1(phonenumber);
-	s[0] = s1;
-	int size = 1;
+	s[0] = s1;*/
+	Subscriber s[100];
+	int size = 0;
 
 	int p;
 	do
@@ -45,7 +46,8 @@ int main()
 		switch (p) 
 		{
 		case 1:
-			push_backSubscriber(s, size);
+			//push_backSubscriber(s, size);
+			AddSubscriber(s, size);
 			break;
 		case 2:
 			break;
@@ -64,17 +66,37 @@ int main()
 	return 0;
 }
 
-//void AddSubscriber(Subscriber* arr, int& size)
-//{
-//	char phone[12];
-//	cout << "Enter Mobile Phone:";
-//	cin >> phone;
-//	Subscriber temp(phone);
-//	arr[size] = temp;
-//	size++;
-//	/*Subscriber temp;
-//	push_back(*&arr, *&size, temp);*/
-//}
+void AddSubscriber(Subscriber* arr, int& size)
+{
+	Subscriber temp;
+	cout << "Name: ";
+	char name[20];
+	cin.getline(name, 20);
+	temp.SetName(name);
+
+	cout << "H N: ";
+	char numberHome[20];
+	cin.getline(numberHome, 20);
+	temp.SetPhoneNumberHome(numberHome);
+
+	cout << "J N: ";
+	char numberJobe[20];
+	cin.getline(numberJobe, 20);
+	temp.SetPhoneNumberJob(numberJobe);
+
+	cout << "M N: ";
+	char numberMobile[20];
+	cin.getline(numberMobile, 20);
+	temp.SetPhoneNumberMobile(numberMobile);
+
+	cout << "INFO: ";
+	char info[20];
+	cin.getline(info, 20);
+	temp.SetAdditionalInformation(info);
+
+	arr[size] = temp;
+	size++;
+}
 
 void ShowAllSubscriber(Subscriber* arr, int& size)
 {
@@ -91,23 +113,23 @@ void ShowAllSubscriber(Subscriber* arr, int& size)
 	system("pause");
 }
 
-void push_backSubscriber(Subscriber*& arr, int& size)
-{
-	char tempnumber[20];
-	cout << "Enter mobile number: ";
-	cin>>tempnumber;
-	Subscriber temp(tempnumber);
-
-	Subscriber* newArr = new Subscriber[size + 1];
-
-	for (int i = 0; i < size; i++)
-	{
-		newArr[i] = arr[i];
-	}
-	newArr[size] = temp;
-	size++;
-
-	delete[] arr;
-
-	arr = newArr;
-}
+//void push_backSubscriber(Subscriber*& arr, int& size)
+//{
+//	char tempnumber[20];
+//	cout << "Enter mobile number: ";
+//	cin>>tempnumber;
+//	Subscriber temp(tempnumber);
+//
+//	Subscriber* newArr = new Subscriber[size + 1];
+//
+//	for (int i = 0; i < size; i++)
+//	{
+//		newArr[i] = arr[i];
+//	}
+//	newArr[size] = temp;
+//	size++;
+//
+//	//delete[] arr;
+//
+//	arr = newArr;
+//}
