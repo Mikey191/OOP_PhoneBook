@@ -16,7 +16,7 @@ private:
 	char AdditionalInformation[20];
 public:
 	Subscriber();
-	Subscriber(char* PhoneNumberMobile);
+	//Subscriber(char* PhoneNumberMobile);
 	//Subscriber(char* Name, char* Surname, char* PhoneNumberMobile);
 	char* GetName() { return Name; }
 	char* GetPhoneNumberHome() { return PhoneNumberHome; }

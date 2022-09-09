@@ -7,6 +7,11 @@ Subscriber::Subscriber()
 {
 	cout << "constr 1" << endl;
 	Name = nullptr;
+	PhoneNumberHome[0] = '\0';
+	PhoneNumberJob[0] = '\0';
+	PhoneNumberMobile[0] = '\0';
+	AdditionalInformation[0] = '\0';
+
 	/*PhoneNumberHome = nullptr;
 	PhoneNumberJob = nullptr;
 	PhoneNumberMobile = nullptr;
