@@ -11,19 +11,24 @@
 using namespace std;
 
 void AddSubscriber(Subscriber* arr, int& size);
-void DeleteSubscriber();
-void SerchSubscriber();
+//void DeleteSubscriber();
+//void SerchSubscriber();
 void ShowAllSubscriber(Subscriber* arr, int& size);
 
-void LoadDataBin();
-void SaveDataBin();
+//void LoadDataBin();
+//void SaveDataBin();
 
-void push_back(Subscriber*& arr, int& size, Subscriber temp);
+void push_backSubscriber(Subscriber*& arr, int& size);
 
 int main()
 {
-	Subscriber s[100];
-	int size = 0;
+	Subscriber* s = new Subscriber[1];
+	char phonenumber[20];
+	cout << "Enter phone mobile: ";
+	cin >> phonenumber;
+	Subscriber s1(phonenumber);
+	s[0] = s1;
+	int size = 1;
 
 	int p;
 	do
@@ -40,7 +45,7 @@ int main()
 		switch (p) 
 		{
 		case 1:
-			AddSubscriber(s, size);
+			push_backSubscriber(s, size);
 			break;
 		case 2:
 			break;
@@ -54,23 +59,26 @@ int main()
 
 	} while (p != 0);
 
+	//delete[] s;
+
 	return 0;
 }
 
-void AddSubscriber(Subscriber* arr, int& size)
-{
-	char phone[12];
-	cout << "Enter Mobile Phone:";
-	cin >> phone;
-	Subscriber temp(phone);
-	arr[size] = temp;
-	size++;
-	/*Subscriber temp;
-	push_back(*&arr, *&size, temp);*/
-}
+//void AddSubscriber(Subscriber* arr, int& size)
+//{
+//	char phone[12];
+//	cout << "Enter Mobile Phone:";
+//	cin >> phone;
+//	Subscriber temp(phone);
+//	arr[size] = temp;
+//	size++;
+//	/*Subscriber temp;
+//	push_back(*&arr, *&size, temp);*/
+//}
 
 void ShowAllSubscriber(Subscriber* arr, int& size)
 {
+	cout << "size = " << size << endl;
 	for (int i = 0; i < size; i++)
 	{
 		cout << "Name: " << arr[i].GetName() << endl;
@@ -83,8 +91,13 @@ void ShowAllSubscriber(Subscriber* arr, int& size)
 	system("pause");
 }
 
-void push_back(Subscriber*& arr, int& size, Subscriber temp)
+void push_backSubscriber(Subscriber*& arr, int& size)
 {
+	char tempnumber[20];
+	cout << "Enter mobile number: ";
+	cin>>tempnumber;
+	Subscriber temp(tempnumber);
+
 	Subscriber* newArr = new Subscriber[size + 1];
 
 	for (int i = 0; i < size; i++)

@@ -4,10 +4,10 @@ class Subscriber
 {
 private:
 	char* Name;
-	char PhoneNumberHome[20];
-	char PhoneNumberJob[20];
-	char PhoneNumberMobile[20];
-	char AdditionalInformation[100];
+	char* PhoneNumberHome;
+	char* PhoneNumberJob;
+	char* PhoneNumberMobile;
+	char* AdditionalInformation;
 public:
 	Subscriber();
 	Subscriber(char* PhoneNumberMobile);
